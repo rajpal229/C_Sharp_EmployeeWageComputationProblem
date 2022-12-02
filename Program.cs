@@ -8,23 +8,23 @@
             Random rannum = new Random();
             int checkPresent = rannum.Next(0, 3);
             Console.WriteLine("Random Number: " + checkPresent);
-            if (checkPresent == 1)
+            switch (checkPresent)
             {
-                empHrs = 8;
-                Console.WriteLine("Employee is Present Full TIme");
+                case 1:
+                    empHrs = 8;
+                    Console.WriteLine("Employee is Present Full TIme");
+                    break;
+                case 2:
+                    empHrs = 4;
+                    Console.WriteLine("Employee is Present Part Time");
+                    break;
+                default:
+                    empHrs = 0;
+                    Console.WriteLine("Employee is Absent");
+                    break;
             }
-            else if (checkPresent == 2)
-            {
-                empHrs = 4;
-                Console.WriteLine("Employee is Present Full TIme");
-            }
-            else
-            {
-                empHrs = 0;
-                Console.WriteLine("Employee is Absent");
-            }
-        empWage = empHrs * emp_Rate_Per_Hr;
-        Console.WriteLine("Employee Wage: " + empWage);
+            empWage = empHrs * emp_Rate_Per_Hr;
+            Console.WriteLine("Employee Wage: " + empWage);
         }
     }
 }
